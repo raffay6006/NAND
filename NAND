@@ -1,0 +1,50 @@
+echo "# NAND" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/raffay6006/NAND.git
+git push -u origin mainusing UnityEngine;
+using System.Collections;
+
+public class GameManager : MonoBehaviour
+{
+    public int teamSize = 4;
+    public int matchTime = 600; // in seconds
+    public Gun[] guns;
+    private float timer;
+
+    void Start()
+    {
+        timer = matchTime;
+        StartMatch();
+    }
+
+    void Update()
+    {
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            EndMatch();
+        }
+    }
+
+    void StartMatch()
+    {
+        Debug.Log("Match Started!");
+        // Initialize teams, weapons, and players
+    }
+
+    void EndMatch()
+    {
+        Debug.Log("Match Ended!");
+        // Handle match results
+    }
+}
+
+[System.Serializable]
+public class Gun
+{
+    public string name;
+    public bool isPurchasable;
+}
